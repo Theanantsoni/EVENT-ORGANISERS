@@ -1,0 +1,884 @@
+Main - Display Proper for admin login ...
+
+Form : All Are Done ... With proper javascript, Check Email / Check Place, Date & Time, Payment Process, Generated Bill
+
+--------------------------------------------------------------------------------
+
+In Update time Email and contact when exists in database then display the alert message
+
+Login and register Background change .... 
+
+Admin Profile page ... 
+
+Bill Generated Successfully ...
+
+gallery image and details delete ready ...
+
+login data & register data delete ready ...
+
+book data update and delete ready ...
+
+Book event data show and update page ready ... 
+
+Complete this validation in book form : {
+
+    All fields validation ... done
+
+    First register -> After login -> After book event ... done
+
+    Register -> Email-id not entered second time ... done
+
+    Login -> Without registered User will be not log in ... done
+
+    Book Event -> Without Log-in Not Book the event ... done
+
+    Book Event -> Date & time & Place = Same ... then event is not book ... done
+
+    Check email and place for gives the discount to users ... doneeeeee
+
+    0 time book event -> 5%
+    1st time book event -> 10%
+    2nd time book Event -> 15%
+    3rd  "      "     "   ->  20%
+    4th     "       "     "   ->  25%
+    5th & more    "     "     "   ->   30%
+
+}
+
+event form display, update start
+
+Image update page done for services
+
+Image update page done For gallery
+
+user login , register update done
+
+Event Forms place, date & time when same then second time event is not booked - javascript is complete
+
+Client-Update-info - ready
+
+
+
+
+-------------- : Event Update : --------------
+
+
+
+
+
+
+
+
+
+
+
+
+Deshboard : 
+
+Total Events
+Confirm Events
+Pending Events
+This Year Events
+Before 6 Month Events
+Before 3 Month Events
+This Month Events
+This Week Events
+Upcoming Events
+Cancel Events
+
+First register -> After login -> After book event.
+
+Register -> Email-id not entered second time.
+
+Login -> Without registered User will be not log in.
+
+Book Event -> Without Log-in Not Book the event.
+
+Book Event -> Date & time & Place = Same ... then event is not book.
+
+Check email and place for gives the discount to users.
+
+0 time book event -> 5%
+1st time book event -> 10%
+2nd time book Event -> 15%
+3rd	 "     	"	  "	  ->  20%
+4th 	"   	"	  "	  ->  25%
+5th & more	  "	    "	  "	  ->   30%
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+PIE CHART : 
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['State', 'Area'],
+                    ['Rajasthan', 70],
+                    ['Gujarat', 30]
+                ]);
+
+                var options = {
+                    title: 'Events in Rajasthan and Gujarat',
+                    pieSliceText: 'percentage',
+                    pieStartAngle: 100,
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart3d'));
+                chart.draw(data, options);
+            }
+        </script>
+        <style>
+            /* Center the chart container */
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; /* Make the container full height of the viewport */
+            }
+
+            /* Adjust the size of the pie chart */
+            #piechart3d {
+                width: 80%; /* Adjust the width as needed */
+                margin-left: 20%;
+                height: 80%; /* Adjust the height as needed */
+            }
+        </style>
+        <div class="container">
+            <div id="piechart3d"></div>
+        </div>
+    </div>
+</main>
+
+
+-------------------------------------------------------------------------------------------------
+
+
+<main id="main" class="main">
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+  <div class="chart-container">
+    <h2 class="state-heading">Gujarat State</h2>
+    <canvas id="gujaratChart" width="100" height="100"></canvas>
+  </div>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class="chart-container">
+    <h2 class="state-heading">Rajasthan State</h2>
+    <canvas id="rajasthanChart" width="100" height="100"></canvas>
+  </div>
+</main>
+
+
+
+
+<!-- Include Chart.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+  #main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 10vh;
+  }
+
+  .state-heading {
+  font-size: 24px; /* Adjust font size as needed */
+  text-align: center; /* Center align the headings */
+  margin-bottom: 0; /* Remove the default margin-bottom */
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  margin-bottom: 20px; /* Add some space between chart containers */
+  position: relative; /* Position relative for absolute positioning */
+}
+
+canvas {
+  width: 350px; /* Increase canvas width */
+  height: 350px; /* Increase canvas height */
+  margin-top: 50px; /* Adjust margin-top */
+}
+
+
+.state-heading {
+  position: absolute; /* Position the heading absolutely */
+  top: 0; /* Align to the top of the chart container */
+  left: 50%; /* Move to the center horizontally */
+  transform: translateX(-50%); /* Adjust to center horizontally */
+}
+
+</style>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get the canvas elements
+    var ctxG = document.getElementById("gujaratChart").getContext("2d");
+    var ctxR = document.getElementById("rajasthanChart").getContext("2d");
+
+    // Create the bar charts
+    var gujaratChart = new Chart(ctxG, {
+      type: "pie",
+      data: {
+        labels: ["Ahmedabad", "Vadodara", "Surat", "Rajkot", "Gandhinagar"],
+        datasets: [
+          {
+            label: "Gujarat",
+            data: [8, 15, 6, 10, 5],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.1)",
+              "rgba(54, 162, 235, 0.1)",
+              "rgba(255, 206, 86, 0.1)",
+              "rgba(75, 192, 192, 0.1)",
+              "rgba(153, 102, 255, 0.1)",
+            ],
+            borderColor: [
+              "rgba(255,99,132,1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
+    });
+
+    var rajasthanChart = new Chart(ctxR, {
+      type: "pie",
+      data: {
+        labels: ["Jaipur", "Jodhpur", "Udaipur", "Ajmer", "Kota"],
+        datasets: [
+          {
+            label: "Rajasthan",
+            data: [12, 19, 3, 5, 2],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+            ],
+
+            borderColor: [
+              "rgba(255,99,132,1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
+    });
+  });
+</script>
+
+
+--------------Pending_fdbk_and_rtng.php ------------------------
+
+
+<?php
+require 'Admin/connection.php';
+
+// Fetch pending feedback
+$sql = "SELECT * FROM e_rate_or_feedback WHERE approval_status = 'pending'";
+$result = mysqli_query($conn, $sql);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Your custom styles here */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pending Feedback</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Email</th>
+                    <th>Feedback</th>
+                    <th>Rating</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                    <tr>
+                        <td><?php echo $row['u_email']; ?></td>
+                        <td><?php echo $row['u_feedback']; ?></td>
+                        <td><?php echo $row['u_rate']; ?></td>
+                        <td>
+                            <form action="approve_feedback.php" method="post">
+                                <input type="hidden" name="feedback_id" value="<?php echo $row['u_id']; ?>">
+                                <button type="submit" name="approve" class="btn btn-success">Approve</button>
+                                <button type="submit" name="reject" class="btn btn-danger">Reject</button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS (Optional, if you need it) -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+</html>
+
+<?php
+mysqli_close($conn);
+?>
+
+
+
+------------------------approve_feedback.php ----------------------
+
+<!-- approve_feedback.php -->
+<?php
+require 'Admin/connection.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $feedback_id = $_POST["feedback_id"];
+    if (isset($_POST['approve'])) {
+        $approval_status = 'approved';
+    } elseif (isset($_POST['reject'])) {
+        $approval_status = 'rejected';
+    }
+
+    $sql = "UPDATE e_rate_or_feedback SET approval_status = '$approval_status' WHERE u_id = $feedback_id";
+    if (mysqli_query($conn, $sql)) {
+        if ($approval_status == 'rejected') {
+            echo json_encode(['status' => 'success', 'action' => 'reject']);
+        } else {
+            echo json_encode(['status' => 'success', 'action' => 'approve']);
+        }
+    } else {
+        echo json_encode(['status' => 'error', 'message' => mysqli_error($conn)]);
+    }
+}
+mysqli_close($conn);
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Management</title>
+    <!-- Include necessary CSS and JavaScript files -->
+    <style>
+        .container {
+            padding: 20px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .btn {
+            margin-right: 5px;
+        }
+        .btn-success {
+            background-color: green;
+            color: white;
+        }
+        .btn-danger {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Feedback Management</h2>
+        <div id="feedbackContainer"></div>
+    </div>
+
+    <!-- Include jQuery and other libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Function to create feedback card
+            function createFeedbackCard(feedback) {
+                var cardHtml = '<div class="card" id="feedback_' + feedback.id + '">';
+                cardHtml += '<div class="card-body">';
+                cardHtml += '<p><strong>Email:</strong> ' + feedback.u_email + '</p>';
+                cardHtml += '<p><strong>Feedback:</strong> ' + feedback.u_feedback + '</p>';
+                cardHtml += '<p><strong>Rating:</strong> ' + feedback.u_rate + '</p>';
+                cardHtml += '<div class="rateyo-read-only" data-rateyo-rating="' + feedback.u_rate + '"></div>';
+                cardHtml += '<div class="mt-3">';
+                cardHtml += '<button class="btn btn-success approve">Approve</button>';
+                cardHtml += '<button class="btn btn-danger reject">Reject</button>';
+                cardHtml += '</div></div></div>';
+                return cardHtml;
+            }
+
+            // Fetch and display feedback data
+            function fetchAndDisplayFeedback() {
+                $.ajax({
+                    url: "fetch_feedback.php",
+                    type: "GET",
+                    success: function (response) {
+                        var feedbackData = JSON.parse(response);
+                        $('#feedbackContainer').empty(); // Clear previous feedback cards
+                        feedbackData.forEach(function (feedback) {
+                            var cardHtml = createFeedbackCard(feedback);
+                            $('#feedbackContainer').append(cardHtml);
+                        });
+                        $(".rateyo-read-only").rateYo({
+                            readOnly: true,
+                            starWidth: "20px",
+                            ratedFill: "#ffc107",
+                            numStars: 5,
+                            precision: 0
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            }
+
+            // Call fetchAndDisplayFeedback initially
+            fetchAndDisplayFeedback();
+
+            // Event listener for approval
+            $(document).on('click', '.approve', function (e) {
+                e.preventDefault();
+                var feedbackId = $(this).closest('.card').attr('id').split('_')[1];
+
+                $.ajax({
+                    url: "approve_feedback.php",
+                    type: "POST",
+                    data: {
+                        feedback_id: feedbackId,
+                        approve: true
+                    },
+                    success: function (response) {
+                        var result = JSON.parse(response);
+                        if (result.status === 'success' && result.action === 'approve') {
+                            // Change button color and disable
+                            $(this).addClass('btn-secondary').removeClass('btn-success').prop('disabled', true);
+                            $(this).siblings('.reject').prop('disabled', true);
+                        } else {
+                            alert(result.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+
+            // Event listener for rejection
+            $(document).on('click', '.reject', function (e) {
+                e.preventDefault();
+                var feedbackId = $(this).closest('.card').attr('id').split('_')[1];
+
+                $.ajax({
+                    url: "approve_feedback.php",
+                    type: "POST",
+                    data: {
+                        feedback_id: feedbackId,
+                        reject: true
+                    },
+                    success: function (response) {
+                        var result = JSON.parse(response);
+                        if (result.status === 'success' && result.action === 'reject') {
+                            fetchAndDisplayFeedback(); // Refresh feedback after rejection
+                        } else {
+                            alert(result.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+--------------------------fetch_feedback.php -----------------------------
+
+
+<?php
+require 'Admin/connection.php';
+
+// Fetch all approved feedback
+$sql = "SELECT * FROM e_rate_or_feedback WHERE approval_status = 'approved'";
+$result = mysqli_query($conn, $sql);
+
+$feedbackData = array();
+while ($row = mysqli_fetch_assoc($result)) {
+    $feedbackData[] = $row;
+}
+
+echo json_encode($feedbackData);
+mysqli_close($conn);
+?>
+
+
+
+---------------------------- Card Number Animated Script Code -----------------
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    animateCardNumbers();
+});
+
+function animateCardNumbers() {
+    const cards = document.querySelectorAll('.display-3');
+    cards.forEach((card, index) => {
+        const targetNumber = parseInt(card.textContent);
+        const duration = 2000; // 2 seconds
+        const increment = targetNumber / (duration / 10); // Increment per 10 milliseconds
+        let currentNumber = 1;
+
+        const interval = setInterval(() => {
+            card.textContent = Math.round(currentNumber);
+            currentNumber += increment;
+            if (currentNumber >= targetNumber) {
+                card.textContent = targetNumber;
+                clearInterval(interval);
+            }
+        }, 10 * (index + 1)); // Adjust timing for each card
+    });
+}
+</script>
+
+
+--------------------------- Event Book Form Codes ---------------------------
+
+
+<?php // state, city, area, place display in number[id] format ?>
+
+
+<?php
+// // Include the connection.php file
+// include 'Admin/connection.php';
+
+//   if(isset($_POST['btnbook']))
+//   {
+//       $fname = $_POST['fname'];
+//       $lname = $_POST['lname'];
+//       $email = $_POST['email'];
+//       $contact = $_POST['contact'];
+//       $address = $_POST['address'];
+//       $state = $_POST['state'];
+//       $city = $_POST['city'];
+//       $area = $_POST['area'];
+//       $place = $_POST['place'];
+//       $udate = $_POST['udate'];
+//       $time = $_POST['time'];
+//       $rprice = $_POST['rprice'];
+//       $decoration = $_POST['decoration'];
+//       $memnum = $_POST['memnum'];
+//       $dprice = $_POST['dprice'];
+//       $event = $_POST['event'];
+//       $food = $_POST['food'];
+//       $mname = $_POST['mname'];
+//       $memail = $_POST['memail'];
+//       $mcontact = $_POST['mcontact'];
+//       $mplace = $_POST['mplace'];
+//       $erprice2 = $_POST['erprice2'];
+//       $edprice2 = $_POST['edprice2'];
+//       $tprice = $_POST['tprice'];
+
+//       // Insert data into the database
+//       $sql = "INSERT INTO book_form VALUES (0,'$fname', '$lname', '$email', '$contact', '$address', '$state', '$city', '$area', '$place', '$udate', '$time', '$rprice', '$decoration', '$memnum', '$dprice', '$event', '$food', '$mname', '$memail', '$mcontact', '$mplace', '$erprice2', '$edprice2', '$tprice')";
+
+//       $data = mysqli_query($conn, $sql);
+
+//       header("location : form1.php");
+//   }
+  
+?>
+
+
+<?php // state, city, area, place display in name format ?>
+
+
+<?php
+// // Include the connection.php file
+// include 'Admin/connection.php';
+
+// if(isset($_POST['btnbook'])) {
+//     $fname = $_POST['fname'];
+//     $lname = $_POST['lname'];
+//     $email = $_POST['email'];
+//     $contact = $_POST['contact'];
+//     $address = $_POST['address'];
+//     $state_id = $_POST['state'];
+//     $city_id = $_POST['city'];
+//     $area_id = $_POST['area'];
+//     $place_id = $_POST['place'];
+//     $udate = $_POST['udate'];
+//     $time = $_POST['time'];
+//     $rprice = $_POST['rprice'];
+//     $decoration = $_POST['decoration'];
+//     $memnum = $_POST['memnum'];
+//     $dprice = $_POST['dprice'];
+//     $event = $_POST['event'];
+//     $food = $_POST['food'];
+//     $mname = $_POST['mname'];
+//     $memail = $_POST['memail'];
+//     $mcontact = $_POST['mcontact'];
+//     $mplace = $_POST['mplace'];
+//     $erprice2 = $_POST['erprice2'];
+//     $edprice2 = $_POST['edprice2'];
+//     $tprice = $_POST['tprice'];
+
+//     // Fetch state name
+//     $state_query = "SELECT state_name FROM e_state WHERE state_id = '$state_id'";
+//     $state_result = mysqli_query($conn, $state_query);
+//     $state_row = mysqli_fetch_assoc($state_result);
+//     $state_name = $state_row['state_name'];
+
+//     // Fetch city name
+//     $city_query = "SELECT city_name FROM e_city WHERE city_id = '$city_id'";
+//     $city_result = mysqli_query($conn, $city_query);
+//     $city_row = mysqli_fetch_assoc($city_result);
+//     $city_name = $city_row['city_name'];
+
+//     // Fetch area name
+//     $area_query = "SELECT area_name FROM e_area WHERE area_id = '$area_id'";
+//     $area_result = mysqli_query($conn, $area_query);
+//     $area_row = mysqli_fetch_assoc($area_result);
+//     $area_name = $area_row['area_name'];
+
+//     // Fetch place name
+//     $place_query = "SELECT place_name FROM e_place WHERE place_id = '$place_id'";
+//     $place_result = mysqli_query($conn, $place_query);
+//     $place_row = mysqli_fetch_assoc($place_result);
+//     $place_name = $place_row['place_name'];
+
+//     // Insert data into the database
+//     $sql = "INSERT INTO book_form VALUES (0, '$fname', '$lname', '$email', '$contact', '$address', '$state_name', '$city_name', '$area_name', '$place_name', '$udate', '$time', '$rprice', '$decoration', '$memnum', '$dprice', '$event', '$food', '$mname', '$memail', '$mcontact', '$mplace', '$erprice2', '$edprice2', '$tprice')";
+
+//     $data = mysqli_query($conn, $sql);
+
+//     header("location: form1.php");
+// }
+?>
+
+
+<?php // Place, Date, Time When all 3 fields are same then event is not booked ?>
+
+
+<?php
+// Include the connection.php file
+include 'Admin/connection.php';
+
+if(isset($_POST['btnbook'])) {
+    // Fetch form data
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+    $address = $_POST['address'];
+    $state_id = $_POST['state'];
+    $city_id = $_POST['city'];
+    $area_id = $_POST['area'];
+    $place_id = $_POST['place'];
+    $udate = $_POST['udate'];
+    $time = $_POST['time'];
+    $rprice = $_POST['rprice'];
+    $decoration = $_POST['decoration'];
+    $memnum = $_POST['memnum'];
+    $dprice = $_POST['dprice'];
+    $event = $_POST['event'];
+    $food = $_POST['food'];
+    $mname = $_POST['mname'];
+    $memail = $_POST['memail'];
+    $mcontact = $_POST['mcontact'];
+    $mplace = $_POST['mplace'];
+    $erprice2 = $_POST['erprice2'];
+    $edprice2 = $_POST['edprice2'];
+    $tprice = $_POST['tprice'];
+
+    // Fetch place name
+    $place_query = "SELECT place_name FROM e_place WHERE place_id = '$place_id'";
+    $place_result = mysqli_query($conn, $place_query);
+    $place_row = mysqli_fetch_assoc($place_result);
+    $place_name = $place_row['place_name'];
+
+    // Check if the combination of place_name, udate, and time already exists
+    $check_query = "SELECT * FROM book_form WHERE e_place = '$place_name' AND e_date = '$udate' AND e_time = '$time'";
+    $check_result = mysqli_query($conn, $check_query);
+
+    if(mysqli_num_rows($check_result) > 0) {
+        // Event is already booked, show alert message
+        echo "<script>alert('This event is already booked. Please select another Place or Date or Time.')</script>";
+    } else {
+        // Fetch state name
+        $state_query = "SELECT state_name FROM e_state WHERE state_id = '$state_id'";
+        $state_result = mysqli_query($conn, $state_query);
+        $state_row = mysqli_fetch_assoc($state_result);
+        $state_name = $state_row['state_name'];
+
+        // Fetch city name
+        $city_query = "SELECT city_name FROM e_city WHERE city_id = '$city_id'";
+        $city_result = mysqli_query($conn, $city_query);
+        $city_row = mysqli_fetch_assoc($city_result);
+        $city_name = $city_row['city_name'];
+
+        // Fetch area name
+        $area_query = "SELECT area_name FROM e_area WHERE area_id = '$area_id'";
+        $area_result = mysqli_query($conn, $area_query);
+        $area_row = mysqli_fetch_assoc($area_result);
+        $area_name = $area_row['area_name'];
+
+        // Insert data into the database
+        $sql = "INSERT INTO book_form VALUES (0, '$fname', '$lname', '$email', '$contact', '$address', '$state_name', '$city_name', '$area_name', '$place_name', '$udate', '$time', '$rprice', '$decoration', '$memnum', '$dprice', '$event', '$food', '$mname', '$memail', '$mcontact', '$mplace', '$erprice2', '$edprice2', '$tprice')";
+
+        $data = mysqli_query($conn, $sql);
+
+        header("location: form1.php");
+    }
+}
+?>
+
+
+
+---------------------- Login update data code ----------------------
+
+
+
+
+        <?php
+            include "../connection.php";
+
+            // Fetch user data for editing
+            if(isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $sql = "SELECT * FROM eu_login WHERE u_id=$id";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_assoc($result);
+            } else {
+                // Redirect if no id is provided
+                echo "<script>window.location.href = '../user-login-update-info.php';</script>";
+
+                exit();
+            }
+
+            // Update user data
+            if(isset($_POST['btn-update'])) {
+                $id = $_POST['u_id'];
+                $email = $_POST['u_email'];
+                $password = $_POST['u_password'];
+
+                $update_query = "UPDATE eu_login SET u_email='$email', u_password='$password' WHERE u_id=$id";
+                if(mysqli_query($conn, $update_query)) {
+                    echo "<script>window.location.href = '../user-login-update-info.php';</script>";
+
+                    exit();
+                } else {
+                    echo "Error updating record: " . mysqli_error($conn);
+                }
+            }
+
+            mysqli_close($conn);
+        ?>
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+         <style>
+            .custom-heading {
+                background-color: #343a40;
+                color: white;
+                padding: 10px;
+                text-align: center;
+            }
+        </style>
+
+        <br><br><br>
+
+        <h1 class="display-6 custom-heading">User Login Update Information</h1>
+
+        <br><br><br>
+
+        <form method="POST">
+            <input type="hidden" name="u_id" value="<?php echo $row['u_id']; ?>">
+            <div class="form-group">
+                <label for="u_email" style="font-size: 20px;"><b>Email :</b></label>
+                <input type="text" class="form-control" id="u_email" name="u_email" value="<?php echo $row['u_email']; ?>">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="u_password" style="font-size: 20px;"><b>Password :</b></label>
+                <input type="text" class="form-control" id="u_password" name="u_password" value="<?php echo $row['u_password']; ?>">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success" name="btn-update">Update</button>&nbsp;&nbsp;&nbsp;
+            <button type="reset" class="btn btn-warning" name="btn-reset">Reset</button>&nbsp;&nbsp;&nbsp;
+            <a href="../user-login-update-info.php" class="btn btn-danger">Cancel</a>
+
+        </form>    
+
+        <br><br><br>
