@@ -1,1 +1,3 @@
-# Event-Organisers
+Croma Store - Minor project
+Author : Anant Soni
+
