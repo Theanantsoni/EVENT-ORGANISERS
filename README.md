@@ -1,24 +1,28 @@
-Event Organisers
+𝐄𝐯𝐞𝐧𝐭 𝐎𝐫𝐠𝐚𝐧𝐢𝐬𝐞𝐫𝐬
 <br>
-Author : Anant Soni
+𝐀𝐮𝐭𝐡𝐨𝐫 : 𝐀𝐧𝐚𝐧𝐭 𝐒𝐨𝐧𝐢
 
 
-Event Organisers Website Video Using PHP.
+𝐄𝐯𝐞𝐧𝐭 𝐎𝐫𝐠𝐚𝐧𝐢𝐬𝐞𝐫𝐬 𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐔𝐬𝐢𝐧𝐠 𝐏𝐇𝐏. 
 
 
-CHECK FULL VIDEO ON YOUTUBE LINK :
+[𝐂𝐥𝐢𝐞𝐧𝐭-𝐒𝐢𝐝𝐞 & 𝐀𝐝𝐦𝐢𝐧-𝐒𝐢𝐝𝐞 𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐏𝐫𝐨𝐣𝐞𝐜𝐭]
 
 
-Click Here For Client-Side Website Video :
+𝐂𝐡𝐞𝐜𝐤 𝐅𝐮𝐥𝐥 𝐕𝐢𝐝𝐞𝐨 𝐎𝐧 𝐘𝐨𝐮𝐓𝐮𝐛𝐞 𝐋𝐢𝐧𝐤 :
+
+
+𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 𝐅𝐨𝐫 𝐂𝐥𝐢𝐞𝐧𝐭-𝐒𝐢𝐝𝐞 𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐕𝐢𝐝𝐞𝐨 :
 
 https://youtu.be/YJ_xq9gP6pk?si=k6qrK-gMb1fEXwnj
 
 
-Click Here For Admin-Side Website Video :
+𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 𝐅𝐨𝐫 𝐀𝐝𝐦𝐢𝐧-𝐒𝐢𝐝𝐞 𝐖𝐞𝐛𝐬𝐢𝐭𝐞 𝐕𝐢𝐝𝐞𝐨 :
 
 https://youtu.be/LyZBuhmCqVg?si=0LhXbRbrtGd4OqqC
 
 
-LINKDIN ACCOUNT LINK :
+𝐋𝐢𝐧𝐤𝐞𝐝𝐈𝐧 𝐏𝐫𝐨𝐟𝐢𝐥𝐞 𝐋𝐢𝐧𝐤 :
 
 https://www.linkedin.com/in/anant-soni-b737662a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+
