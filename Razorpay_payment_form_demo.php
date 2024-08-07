@@ -35,7 +35,7 @@ jQuery(document).ready(function($) {
 
         // Construct Razorpay options
         var options = {
-            "key": "rzp_test_rF4PfasMeADbIc",
+            "key": "",
             "amount": payAmount * 100, // Amount in paisa
             "currency": "INR",
             "name": "Event Management",
