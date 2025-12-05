@@ -2,7 +2,7 @@ Event Organisers
 <br>
 Author : Anant Soni
 
-Event Organisers Website Using PHP.
+Event Organisers Website Using PHP & MySql.
 [Client-Side & Admin-Side Website Project]
 
 Check Full Video on YouTube:
